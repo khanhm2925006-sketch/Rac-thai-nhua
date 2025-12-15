@@ -1,0 +1,88 @@
+# Chương trình kiểm tra IQ với 10 câu hỏi trắc nghiệm
+# Tác giả: Chuyên gia máy tính AI
+
+# Danh sách câu hỏi, lựa chọn và đáp án đúng
+questions = [
+    {
+        "question": "Chuỗi số sau: 2, 4, 8, 16, ... Tiếp theo là số nào?",
+        "options": ["A) 20", "B) 24", "C) 32", "D) 64"],
+        "answer": "C"
+    },
+    {
+        "question": "Hãy tưởng tượng một lưới 3x3 với các ô vuông. Nếu bạn điền các ô theo mẫu xoắn ốc bắt đầu từ góc trên bên trái, ô nào sẽ là ô cuối cùng? (Giả sử điền theo chiều kim đồng hồ).",
+        "options": ["A) Góc dưới bên phải", "B) Góc dưới bên trái", "C) Giữa dưới", "D) Giữa phải"],
+        "answer": "C"
+    },
+    {
+        "question": "Nếu 5 máy tính xử lý 5 nhiệm vụ trong 5 phút, thì 100 máy tính sẽ xử lý 100 nhiệm vụ trong bao lâu?",
+        "options": ["A) 100 phút", "B) 5 phút", "C) 1 phút", "D) 20 phút"],
+        "answer": "B"
+    },
+    {
+        "question": "Chuỗi: A, C, E, G, ... Tiếp theo là gì?",
+        "options": ["A) H", "B) I", "C) J", "D) K"],
+        "answer": "B"
+    },
+    {
+        "question": "Trong lập trình, nếu một hàm gọi chính nó (gọi là đệ quy), và chuỗi sau đại diện cho số lần gọi: 1, 2, 3, 2, 1. Đây là mẫu của loại hàm nào?",
+        "options": ["A) Hàm tuyến tính", "B) Hàm đệ quy với chiều sâu 3", "C) Hàm vòng lặp vô hạn", "D) Hàm song song"],
+        "answer": "B"
+    },
+    {
+        "question": "Số nhị phân 1010 đại diện cho số thập phân 10. Số nhị phân nào đại diện cho số thập phân 15?",
+        "options": ["A) 1011", "B) 1101", "C) 1111", "D) 1001"],
+        "answer": "C"
+    },
+    {
+        "question": "Nếu 'mèo' liên quan đến 'chó' như 'máy tính' liên quan đến gì? (Dựa trên mối quan hệ đối lập chức năng).",
+        "options": ["A) Điện thoại", "B) Sách", "C) Máy in", "D) Bút chì"],
+        "answer": "B"
+    },
+    {
+        "question": "Một thuật toán chạy trong 1 giây cho 1 dữ liệu, 4 giây cho 2 dữ liệu, 9 giây cho 3 dữ liệu. Với 4 dữ liệu, thời gian là bao nhiêu?",
+        "options": ["A) 12 giây", "B) 16 giây", "C) 25 giây", "D) 36 giây"],
+        "answer": "B"
+    },
+    {
+        "question": "Alice viết code nhanh hơn Bob, Bob viết code nhanh hơn Charlie. Nếu Charlie viết code chậm nhất, ai viết code nhanh nhất?",
+        "options": ["A) Alice", "B) Bob", "C) Charlie", "D) Không xác định"],
+        "answer": "A"
+    },
+    {
+        "question": "Bạn có 9 bit dữ liệu, trong đó 8 bit giống nhau và 1 bit khác. Để tìm bit khác, bạn cần bao nhiêu lần so sánh tối thiểu (giống như cân giả mạo)?",
+        "options": ["A) 1", "B) 2", "C) 3", "D) 4"],
+        "answer": "C"
+    }
+]
+
+def run_quiz():
+    score = 0
+    total_questions = len(questions)
+    
+    print("Chào mừng đến với bài kiểm tra IQ! Hãy trả lời 10 câu hỏi trắc nghiệm.")
+    print("Chọn đáp án bằng cách nhập A, B, C hoặc D (viết hoa).\n")
+    
+    for i, q in enumerate(questions, 1):
+        print(f"Câu {i}: {q['question']}")
+        for opt in q['options']:
+            print(opt)
+        
+        user_answer = input("Đáp án của bạn: ").strip().upper()
+        
+        if user_answer == q['answer']:
+            print("Đúng!\n")
+            score += 1
+        else:
+            print(f"Sai! Đáp án đúng là {q['answer']}.\n")
+    
+    print(f"Kết thúc bài kiểm tra! Điểm của bạn: {score}/{total_questions}")
+    if score >= 8:
+        print("Xuất sắc! Bạn có thể có IQ cao.")
+    elif score >= 5:
+        print("Tốt! Bạn có khả năng logic tốt.")
+    else:
+        print("Cố gắng hơn nhé! Đây chỉ là bài kiểm tra đơn giản.")
+
+# Chạy chương trình
+if __name__ == "__main__":
+    run_quiz()
